@@ -1,7 +1,10 @@
 .input_control {
   display: flex;
-  flex-direction: column;
   margin-top: 1rem;
+}
+
+.is_column {
+  flex-direction: column;
 }
 
 .input_control_input {
@@ -30,7 +33,7 @@
 
 .input_control_input::placeholder {
   color: var(--ligthCyan);
-  opacity: 0.4; /* Firefox */
+  opacity: 0.4;
 }
 
 .input_control_label {
@@ -40,7 +43,7 @@
 
 .input_control_error,
 .credentials {
-  visibility: hidden;
+  visibility: visible;
   color: var(--red);
   font-size: 0.8em;
   font-weight: 600;
@@ -48,7 +51,7 @@
   margin-left: 0.5em;
   margin-bottom: 0.7em;
 }
-.credentials {
+.generic {
   text-align: center;
   font-size: 0.98em;
 }

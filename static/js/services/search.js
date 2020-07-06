@@ -1,6 +1,6 @@
 import callApi from "./callApi.js";
 
-const movie = {
+const movies = {
   searchById(id) {
     return callApi(title);
   },
@@ -9,4 +9,4 @@ const movie = {
   }
 };
 
-export { movie };
+export { movies };

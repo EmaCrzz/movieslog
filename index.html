@@ -15,19 +15,98 @@
   </head>
 
   <body>
-    <header>
-      <h2>movieslog</h2>
-    </header>
-    <form id="form_search">
-      <input
-        required
-        type="text"
-        id="input_search"
-        placeholder="insert movie title"
+    <header class="header no-margin">
+      <img
+        class="header_logo is-small"
+        src="./static/icons/logo_transparent.png"
+        alt="Movieslog Logo"
       />
-      <button>Search</button>
+    </header>
+    <form id="form-search" class="u-wrapper-sm u-sticky">
+      <div class="input_control">
+        <input
+          autofocus
+          type="text"
+          id="input-search"
+          placeholder="insert movie title"
+          class="input_control_input"
+          value="deadpool"
+        />
+        <button class="u-button">Search</button>
+      </div>
+      <small class="u-is-hidden" id="error-search"></small>
     </form>
-    <div id="app"></div>
+    <main class="u-wrapper masonry" id="container-movies">
+      <!-- <div class="masonry-item">
+        <img
+          src="./static/images/cherry-plant.jpg"
+          alt="Cherry plant"
+          title="Cherry plant"
+        />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img
+          src="./static/images/oranges-pomegranates.jpg"
+          alt="Oranges and Pomegranates"
+          title="Oranges and Pomegranates"
+        />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img
+          src="./static/images/strawberry.jpg"
+          alt="Strawberry"
+          title="Strawberry"
+        />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img
+          src="./static/images/blueberries.jpg"
+          alt="Blueberries"
+          title="Blueberries"
+        />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img src="./static/images/pears.jpg" alt="Pears" title="Pears" />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img
+          src="./static/images/easter-eggs.jpg"
+          alt="Easter-eggs"
+          title="Easter-eggs"
+        />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img src="./static/images/lemons.jpg" alt="Lemons" title="Lemons" />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img
+          src="./static/images/cherries.jpg"
+          alt="Cherries"
+          title="Cherries"
+        />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div>
+      <div class="masonry-item">
+        <img src="./static/images/grapes.jpg" alt="Grapes" title="Grapes" />
+        <h5>Titulo de la peli</h5>
+        <small>Type - Year</small>
+      </div> -->
+    </main>
     <script type="module" src="./static/js/index.js"></script>
   </body>
 </html>

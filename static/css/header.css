@@ -3,8 +3,16 @@
   margin-top: 8rem;
 }
 
+.no-margin {
+  margin-top: 0;
+}
+
 .header_logo {
   width: 15rem;
+}
+
+.is-small {
+  width: 8rem;
 }
 
 .header_slogan {

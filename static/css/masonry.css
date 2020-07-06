@@ -1,0 +1,44 @@
+.masonry {
+  transition: all 0.5s ease-in-out;
+  column-gap: 10px;
+  column-fill: initial;
+  margin-top: 1rem;
+}
+
+.masonry .masonry-item {
+  margin-bottom: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .masonry {
+    column-count: 2;
+    column-gap: 3px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .desc {
+    font-size: 1.25em;
+  }
+
+  .intro {
+    letter-spacing: 1px;
+  }
+
+  .masonry {
+    column-count: 5;
+  }
+}
