@@ -22,7 +22,7 @@ function validateForm(event) {
 
   if (validForm) {
     window.localStorage.setItem("token", "true");
-    document.location.href = "/index.html";
+    document.location.href = window.location.href.replace("/login.html", "/");
   }
 }
 
