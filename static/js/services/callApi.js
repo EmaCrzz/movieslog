@@ -1,17 +1,13 @@
-import { ErrorsApi } from "./errors";
+// import { ErrorsApi } from "./errors";
 const API_KEY = "f62558de";
 const BASE_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&`;
 
-async function callApi(endpoint) {
+async function callApi(param) {
   const options = {
     "Content-Type": "application/json",
     method: "GET"
   };
-  let url;
-
-  if (!endpoint.includes(BASE_URL)) {
-    url = BASE_URL + endpoint;
-  } else url = endpoint;
+  const url = BASE_URL + param;
 
   const response = await fetch(url, options);
 
