@@ -29,20 +29,22 @@
         alt="Movieslog Logo"
       />
     </header>
-    <form id="form-search" class="u-wrapper-sm u-sticky">
-      <div class="input_control">
-        <input
-          autofocus
-          type="text"
-          id="input-search"
-          placeholder="insert movie title"
-          class="input_control_input"
-          value="deadpool"
-        />
-        <button class="u-button">Search</button>
-      </div>
-      <small class="u-is-hidden" id="error-search"></small>
-    </form>
+    <div class="container_form u-sticky">
+      <form id="form-search" class="u-wrapper-sm">
+        <div class="input_control">
+          <input
+            autofocus
+            type="text"
+            id="input-search"
+            placeholder="insert movie title"
+            class="input_control_input"
+            value="deadpool"
+          />
+          <button class="u-button">Search</button>
+        </div>
+        <small class="u-is-hidden" id="error-search"></small>
+      </form>
+    </div>
     <main class="u-wrapper masonry" id="container-movies"></main>
     <script type="module" src="./static/js/index.js"></script>
   </body>

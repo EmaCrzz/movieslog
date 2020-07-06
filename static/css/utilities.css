@@ -5,6 +5,7 @@
 .u-sticky {
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 .u-wrapper {
@@ -97,9 +98,6 @@
     padding: 0 0.5em;
     min-width: 320px;
   }
-  /* .u-h4 {
-    font-size: 1em;
-  } */
   .u-button.is-outlined {
     padding: 0.6em;
     border: none;
@@ -108,4 +106,9 @@
     width: 0.9em;
     height: 0.9em;
   }
+}
+
+.container_form {
+  background: var(--background);
+  padding: 5px 0;
 }
