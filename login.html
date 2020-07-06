@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Movieslog | Login</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        class="header_logo"
+        src="./static/icons/logo_transparent.png"
+        alt="Movieslog Logo"
+      />
+      <h5 class="header_slogan">Find your favorite entertainment</h5>
+    </header>
+    <form class="u-wrapper-sm">
+      <div class="input_control">
+        <input
+          class="input_control_input"
+          id="username"
+          type="text"
+          placeholder="Username"
+          autofocus
+        />
+        <small class="input_control_error" id="error-username">
+          This field is required
+        </small>
+      </div>
+      <div class="input_control">
+        <input
+          class="input_control_input"
+          id="password"
+          type="password"
+          placeholder="Password"
+        />
+        <small class="input_control_error" id="error-password"
+          >This field is required
+        </small>
+      </div>
+      <h5 class="input_control_error credentials">
+        Username or password incorrect
+      </h5>
+      <button class="u-button is-fullWidth">Login</button>
+    </form>
+  </body>
+</html>

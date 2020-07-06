@@ -1,0 +1,13 @@
+:root {
+  --softBlue: hsl(231, 69%, 60%);
+  --grayishBlue: hsl(229, 8%, 60%);
+  --veryDarkBlue: hsl(229, 31%, 21%);
+  --amber: #ffc107;
+  --green: #4caf50;
+  --red: #ef5350;
+  --ligthCyan: #e0ffff;
+  --background: hsl(218, 14%, 31%);
+  --softBackground: #675d5c;
+  --secondaryColor: #c79065;
+  --secondaryDarkColor: #836c5d;
+}

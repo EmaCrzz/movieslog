@@ -1,4 +1,7 @@
 import { movie } from "./services/search.js";
+import { useSession } from "./session.js";
+
+useSession();
 
 const $inputSearch = document.getElementById("input-search");
 const $formSearch = document.getElementById("form-search");
@@ -10,5 +13,5 @@ $formSearch.addEventListener("submit", e => {
 
 async function searchMovie() {
   const param = $inputSearch.value.replace(" ", "+");
-  const call = await movie.searchByTitle(`t=${param}`);
+  const call = await movie.searchByTitle(`s=${param}`);
 }

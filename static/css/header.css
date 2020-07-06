@@ -1,0 +1,13 @@
+.header {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.header_logo {
+  width: 15rem;
+}
+
+.header_slogan {
+  margin: 0;
+  color: var(--secondaryColor);
+}
