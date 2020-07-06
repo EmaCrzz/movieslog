@@ -1,6 +1,5 @@
-// import { ErrorsApi } from "./errors";
 const API_KEY = "f62558de";
-const BASE_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&`;
+const BASE_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
 
 async function callApi(param) {
   const options = {
