@@ -109,6 +109,10 @@
 }
 
 .container_form {
-  background: var(--background);
+  background: var(--backgroundLigth);
   padding: 5px 0;
+}
+
+body.dark .container_form {
+  background: var(--backgroundDark);
 }

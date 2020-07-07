@@ -8,10 +8,10 @@
 }
 
 .input_control_input {
-  background-color: var(--softBackground);
+  background: var(--softGreen);
+  color: var(--veryDarkBlue);
   border: none;
   border-bottom: 2px solid var(--secondaryDarkColor);
-  color: var(--ligthCyan);
   width: 100%;
   box-sizing: border-box;
   margin-right: 1.2em;
@@ -32,8 +32,17 @@
 }
 
 .input_control_input::placeholder {
+  color: var(--softBackground);
+  opacity: 0.5;
+}
+
+body.dark .input_control_input {
+  background-color: var(--softBackground);
   color: var(--ligthCyan);
-  opacity: 0.4;
+}
+
+body.dark .input_control_input::placeholder {
+  color: var(--ligthCyan);
 }
 
 .input_control_label {

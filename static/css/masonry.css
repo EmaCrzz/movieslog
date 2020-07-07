@@ -12,6 +12,13 @@
   text-align: center;
   margin-bottom: 1rem;
   width: 100%;
+  -webkit-box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+  box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+}
+
+body.dark .masonry-item {
+  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
 }
 
 .masonry-item:hover {

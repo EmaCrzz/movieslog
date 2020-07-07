@@ -9,7 +9,12 @@ body {
   font-family: "Source Code Pro", monospace;
   margin: 0;
   font-size: 14px;
-  background-color: var(--background);
+  background-color: var(--backgroundLigth);
+  color: var(--veryDarkBlue);
+}
+
+body.dark {
+  background-color: var(--backgroundDark);
   color: var(--ligthCyan);
 }
 

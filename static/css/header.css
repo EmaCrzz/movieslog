@@ -7,6 +7,12 @@
   margin-top: 0;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .header_logo {
   width: 15rem;
 }
