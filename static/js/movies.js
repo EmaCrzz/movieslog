@@ -1,5 +1,8 @@
 function useMovies({ htmlContainer = null, movies = [] }) {
   console.log(movies);
+  if (htmlContainer.hasChildNodes()) {
+    htmlContainer.innerHTML = "";
+  }
   movies.map(movie => {
     const htmlItem = newMovieItem(movie);
     htmlContainer.insertAdjacentHTML("beforeend", htmlItem);

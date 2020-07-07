@@ -12,4 +12,9 @@ function useSession() {
   })();
 }
 
-export { useSession };
+function logout() {
+  window.localStorage.removeItem("token");
+  document.location.href = "login.html";
+}
+
+export { useSession, logout };

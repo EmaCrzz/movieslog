@@ -1,8 +1,16 @@
 import { movies } from "./services/search.js";
-import { useSession } from "./session.js";
+import { useSession, logout } from "./session.js";
 import { useMovies } from "./movies.js";
 
+const $formSearch = document.getElementById("form-search");
+const $inputSearch = document.getElementById("input-search");
+const $errorSearch = document.getElementById("error-search");
+const $logoutButton = document.getElementById("logout");
+
 useSession();
+
+$formSearch.addEventListener("submit", validateForm, false);
+
 function validateForm(event) {
   event.preventDefault();
   $errorSearch.classList.remove("input_control_error", "generic");
@@ -13,12 +21,6 @@ function validateForm(event) {
     searchMovies();
   }
 }
-
-const $formSearch = document.getElementById("form-search");
-const $inputSearch = document.getElementById("input-search");
-const $errorSearch = document.getElementById("error-search");
-
-$formSearch.addEventListener("submit", validateForm, false);
 
 async function searchMovies() {
   const param = $inputSearch.value.replace(" ", "+");
@@ -32,3 +34,7 @@ async function searchMovies() {
   const $containerMovies = document.getElementById("container-movies");
   useMovies({ htmlContainer: $containerMovies, movies: call.data.Search });
 }
+
+$logoutButton.addEventListener("click", () => {
+  logout();
+});
