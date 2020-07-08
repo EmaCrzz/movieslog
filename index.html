@@ -48,7 +48,6 @@
             id="input-search"
             placeholder="insert movie title"
             class="input_control_input"
-            value="deadpool"
           />
           <button class="u-button">Search</button>
         </div>
@@ -56,6 +55,17 @@
       </form>
     </div>
     <main class="u-wrapper masonry" id="container-movies"></main>
+    <div id="lightbox" class="lightbox u-is-hidden">
+      <button
+        id="button-lightbox"
+        class="u-button with-icon is-outlined button_lightbox"
+      >
+        <img src="./static/icons/cerrar.svg" alt="" />
+      </button>
+      <div class="container_lightbox">
+        <img src="./static/icons/logo_transparent.png" alt="" />
+      </div>
+    </div>
     <script type="module" src="./static/js/dark-mode.js"></script>
     <script type="module" src="./static/js/index.js"></script>
   </body>
