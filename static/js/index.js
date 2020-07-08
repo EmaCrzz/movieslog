@@ -13,7 +13,7 @@ $formSearch.addEventListener("submit", validateForm, false);
 
 function validateForm(event) {
   event.preventDefault();
-  $errorSearch.classList.remove("input_control_error", "generic");
+  $errorSearch.textContent = "";
   if (!$inputSearch.value) {
     $errorSearch.textContent = "Insert a text to search";
     $errorSearch.classList.add("input_control_error", "generic");
@@ -28,11 +28,10 @@ async function searchMovies() {
 
   if ("Error" in call.data) {
     $errorSearch.textContent = call.data.Error;
-    $errorSearch.classList.add("input_control_error", "generic");
   }
 
   const $containerMovies = document.getElementById("container-movies");
-  useMovies({ htmlContainer: $containerMovies, movies: call.data.Search });
+  useMovies({ htmlContainer: $containerMovies, listMovies: call.data.Search });
 }
 
 $logoutButton.addEventListener("click", () => {

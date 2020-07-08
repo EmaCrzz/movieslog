@@ -18,8 +18,26 @@
   height: 50px;
 }
 .container_lightbox {
-  height: 100vh;
+  padding: 2rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.lightbox_poster {
+  height: 300px;
+}
+
+.lightbox_details {
+  width: 100%;
+  padding-top: 1.5rem;
+}
+
+@media screen and (max-width: 460px) {
+  .container_lightbox {
+    display: block;
+    padding-top: 3.5rem;
+    min-width: 320px;
+  }
+  .lightbox_poster {
+    height: 230px;
+  }
 }

@@ -2,7 +2,7 @@ import callApi from "./callApi.js";
 
 const movies = {
   searchById(id) {
-    return callApi(title);
+    return callApi(id);
   },
   searchByTitle(title) {
     return callApi(title);

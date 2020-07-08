@@ -92,14 +92,13 @@
   transform: scale(0.98);
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 500px) {
   .u-wrapper-md,
   .u-wrapper-sm {
     padding: 0 0.5em;
     min-width: 320px;
   }
   .u-button.is-outlined {
-    padding: 0.6em;
     border: none;
   }
   .u-button.is-small img {
