@@ -79,7 +79,7 @@
   width: 1.2em;
 }
 .u-button.is-large {
-  padding: 1em 3em;
+  font-size: 2.5em;
 }
 .u-button:focus {
   outline: none;
@@ -90,6 +90,41 @@
 }
 .u-button:active {
   transform: scale(0.98);
+}
+
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+  font-size: 2em;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.u-h2 {
+  font-size: 1.7em;
+}
+.u-h3 {
+  font-size: 1.4em;
+}
+.u-h4 {
+  font-size: 1.2em;
+}
+.u-h5 {
+  font-size: 1em;
+}
+.u-h6 {
+  font-size: 0.9em;
+}
+.u-p {
+  line-height: 1.8;
+  font-size: 0.9em;
+}
+
+.u-text-center {
+  text-align: center;
 }
 
 @media screen and (max-width: 500px) {
