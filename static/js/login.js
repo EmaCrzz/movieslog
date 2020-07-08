@@ -1,3 +1,5 @@
+import { login } from "./session.js";
+
 function validateForm(event) {
   event.preventDefault();
   let validForm = true;
@@ -21,8 +23,7 @@ function validateForm(event) {
   }
 
   if (validForm) {
-    window.localStorage.setItem("token", "true");
-    document.location.href = window.location.href.replace("/login.html", "/");
+    login({ username: $username.value, password: $password.value });
   }
 }
 

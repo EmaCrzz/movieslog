@@ -1,4 +1,5 @@
 import { movies } from "./services/search.js";
+import { checkFavStorage, toggleFavStorage } from "./session.js";
 
 function useMovies({ htmlContainer = null, listMovies = [] }) {
   if (htmlContainer.hasChildNodes()) {
@@ -122,11 +123,3 @@ function useMovies({ htmlContainer = null, listMovies = [] }) {
 }
 
 export { useMovies };
-
-function checkFavStorage(id) {
-  return true;
-}
-
-function toggleFavStorage(id) {
-  console.log("agregar o quitar vaborito del storage");
-}

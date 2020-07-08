@@ -12,12 +12,11 @@ body {
   margin: 0;
   font-size: 14px;
   background-color: var(--backgroundLigth);
-  color: var(--veryDarkBlue);
+  color: var(--ligthCyan);
 }
 
 body.dark {
   background-color: var(--backgroundDark);
-  color: var(--ligthCyan);
 }
 
 hr {
