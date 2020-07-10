@@ -26,21 +26,25 @@
 
   <body>
     <header class="header no-margin flex">
-      <button class="switch" id="switch">
-        <span><i class="fas fa-sun"></i></span>
-        <span><i class="fas fa-moon"></i></span>
+      <button class="logout" id="logout">
+        <i class="fa fa-power-off" aria-hidden="true"></i>
       </button>
       <img
         class="header_logo is-small"
         src="./static/icons/logo_transparent.png"
         alt="Movieslog Logo"
       />
-      <button class="logout" id="logout">
-        <i class="fa fa-power-off" aria-hidden="true"></i>
+      <button class="switch" id="switch">
+        <span><i class="fas fa-sun"></i></span>
+        <span><i class="fas fa-moon"></i></span>
       </button>
     </header>
     <div class="container_form u-sticky">
       <form id="form-search" class="u-wrapper-sm">
+        <small
+          class="u-is-hidden input_control_error generic"
+          id="error-search"
+        ></small>
         <div class="input_control">
           <input
             autofocus
@@ -51,11 +55,18 @@
           />
           <button class="u-button">Search</button>
         </div>
-        <small class="input_control_error generic" id="error-search"></small>
       </form>
     </div>
     <main class="u-wrapper masonry" id="container-movies"></main>
+    <!-- <main class="u-wrapper masonry" id="container-favorites"></main> -->
     <div id="lightbox" class="lightbox u-is-hidden"></div>
+    <div id="loader" class="a u-text-center u-is-hidden" style="--n: 5;">
+      <div class="dot" style="--i: 0;"></div>
+      <div class="dot" style="--i: 1;"></div>
+      <div class="dot" style="--i: 2;"></div>
+      <div class="dot" style="--i: 3;"></div>
+      <div class="dot" style="--i: 4;"></div>
+    </div>
     <script type="module" src="./static/js/dark-mode.js"></script>
     <script type="module" src="./static/js/index.js"></script>
   </body>

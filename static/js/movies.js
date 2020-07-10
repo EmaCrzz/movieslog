@@ -1,15 +1,64 @@
 import { movies } from "./services/search.js";
-import { checkFavStorage, toggleFavStorage } from "./session.js";
+import {
+  checkFavStorage,
+  toggleFavStorage,
+  getLastSearch,
+  setLastSearch
+} from "./session.js";
 
-function useMovies({ htmlContainer = null, listMovies = [] }) {
-  if (htmlContainer.hasChildNodes()) {
-    htmlContainer.innerHTML = "";
+async function useMovies({
+  htmlContainer = null,
+  htmlLoader = null,
+  htmlError = null,
+  keyword = null
+}) {
+  let listMovies = [];
+
+  if (!keyword) {
+    const lastKeyword = getLastSearch();
+    if (lastKeyword) {
+      toggleLoader(htmlLoader);
+      const htmlLastSearch = `<p id="last-search" class="u-wrapper">Last search: ${lastKeyword}</p>`;
+      htmlContainer.insertAdjacentHTML("beforebegin", htmlLastSearch);
+      const call = await movies.searchByTitle(`s=${lastKeyword}`);
+      if ("Error" in call.data) {
+        htmlError.classList.toggle("u-is-hidden");
+        htmlError.textContent = call.data.Error;
+        toggleLoader(htmlLoader);
+        return;
+      }
+      listMovies = call.data.Search;
+    } else {
+      const htmlEmpty = getMoviesEmpty();
+      htmlContainer.insertAdjacentHTML("beforeend", htmlEmpty);
+      return;
+    }
+  } else {
+    toggleLoader(htmlLoader);
+    if (htmlContainer.hasChildNodes()) {
+      htmlContainer.innerHTML = "";
+    }
+    const call = await movies.searchByTitle(`s=${keyword}`);
+    if ("Error" in call.data) {
+      htmlError.classList.toggle("u-is-hidden");
+      htmlError.textContent = call.data.Error;
+      toggleLoader(htmlLoader);
+      return;
+    }
+    document.getElementById("last-search").remove();
+    listMovies = call.data.Search;
+    setLastSearch(keyword);
   }
 
   listMovies.map(movie => {
     const htmlItem = createMovieItem(movie);
     htmlContainer.insertAdjacentHTML("beforeend", htmlItem);
   });
+  toggleLoader(htmlLoader);
+
+  function getMoviesEmpty() {
+    return `<p>Search a movies</p>`;
+  }
 
   function createMovieItem({ Title, Poster, Type, Year, imdbID }) {
     return `<div class="masonry-item" id=${imdbID}>
@@ -53,6 +102,7 @@ function useMovies({ htmlContainer = null, listMovies = [] }) {
           <img class="lightbox_poster" src="${Poster}" alt="" />
           <div class="lightbox_info">
             <h2 class="u-h4 u-text-center">${Title}</h2>
+            <hr />
             <h4 class="u-h6" class="u-text-center">${Type} - ${Year}</h4>
             <h4 class="u-h6" id="country"></h4>
             <h4 class="u-h6" id="genre"></h4>
@@ -61,7 +111,7 @@ function useMovies({ htmlContainer = null, listMovies = [] }) {
             <p class="u-h6" id="actors"></p>
           </div>
         </div>
-        <div id="loader" class="a u-text-center" style="--n: 5">
+        <div id="loader-details" class="a u-text-center" style="--n: 5">
           <div class="dot" style="--i: 0"></div>
           <div class="dot" style="--i: 1"></div>
           <div class="dot" style="--i: 2"></div>
@@ -98,7 +148,7 @@ function useMovies({ htmlContainer = null, listMovies = [] }) {
   }
 
   async function searchDetailsMovie(id) {
-    const $loader = document.getElementById("loader");
+    const $loader = document.getElementById("loader-details");
     const $footer = document.getElementById("footer");
     const $country = document.getElementById("country");
     const $genre = document.getElementById("genre");
@@ -119,6 +169,10 @@ function useMovies({ htmlContainer = null, listMovies = [] }) {
     $production.textContent = `Production: ${call.data.Production}`;
     $actors.textContent = `Actors: ${call.data.Actors}`;
     $plot.textContent = call.data.Plot;
+  }
+
+  function toggleLoader(loader) {
+    loader.classList.toggle("u-is-hidden");
   }
 }
 
