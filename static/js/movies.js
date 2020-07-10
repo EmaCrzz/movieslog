@@ -45,7 +45,8 @@ async function useMovies({
       toggleLoader(htmlLoader);
       return;
     }
-    document.getElementById("last-search").remove();
+    const $lastSearch = document.getElementById("last-search");
+    if ($lastSearch) $lastSearch.remove();
     listMovies = call.data.Search;
     setLastSearch(keyword);
   }
