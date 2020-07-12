@@ -102,9 +102,9 @@ async function useMovies({
         <div class="lightbox_details">
           <img class="lightbox_poster" src="${Poster}" alt="" />
           <div class="lightbox_info">
-            <h2 class="u-h4 u-text-center">${Title}</h2>
+            <h2 class="u-h4">${Title}</h2>
             <hr />
-            <h4 class="u-h6" class="u-text-center">${Type} - ${Year}</h4>
+            <h4 class="u-h6">${Type} - ${Year}</h4>
             <h4 class="u-h6" id="country"></h4>
             <h4 class="u-h6" id="genre"></h4>
             <h4 class="u-h6" id="language"></h4>
