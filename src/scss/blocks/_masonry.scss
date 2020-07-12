@@ -1,0 +1,42 @@
+.masonry {
+  transition: all 0.5s ease-in-out;
+  column-gap: 10px;
+  column-fill: initial;
+  margin-top: 1rem;
+  @media screen and (min-width: 320px) and (max-width: 600px) {
+    column-count: 2;
+  }
+  @media screen and (min-width: 600px) and (max-width: 1023px) {
+    column-count: 3;
+  }
+  @include laptop {
+    column-count: 5;
+  }
+  &-item {
+    background: $secondary-color;
+    border-radius: 0.2rem;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    -webkit-box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+    box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $secondary-dark-color;
+      transform: scale(0.99);
+    }
+    img {
+      max-width: 100%;
+      vertical-align: middle;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+body.dark .masonry-item {
+  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}

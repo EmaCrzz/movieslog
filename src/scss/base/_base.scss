@@ -1,0 +1,23 @@
+body {
+  font-family: "Source Code Pro", monospace;
+  margin: 0;
+  font-size: 14px;
+  background-color: $background-ligth;
+  color: $background-dark;
+}
+
+body.dark {
+  background-color: $background-dark;
+  color: $ligth-cyan;
+}
+
+hr {
+  border-color: $secondary-color;
+}
+
+.u-is-hidden {
+  display: none;
+}
+.u-is-column {
+  flex-direction: column;
+}

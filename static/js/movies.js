@@ -82,7 +82,7 @@ async function useMovies({
       $ligthBox.innerHTML = "";
       const htmlContent = showDetail(movieSelected);
       $ligthBox.insertAdjacentHTML("beforeend", htmlContent);
-      $ligthBox.classList.toggle("u-is-hidden");
+      $ligthBox.classList.add("lightbox--show");
       listenerHideDetail();
       listenerFavButton(movieSelected.imdbID);
       searchDetailsMovie(movieSelected.imdbID);
@@ -94,7 +94,7 @@ async function useMovies({
     return `<div class="u-wrapper-md">
       <button
         id="button-lightbox"
-        class="u-button with-icon is-outlined button_lightbox"
+        class="u-button outlined border-none button_lightbox"
       >
         <img src="./static/icons/cerrar.svg" alt="" />
       </button>
@@ -112,18 +112,17 @@ async function useMovies({
             <p class="u-h6" id="actors"></p>
           </div>
         </div>
-        <div id="loader-details" class="a u-text-center" style="--n: 5">
-          <div class="dot" style="--i: 0"></div>
-          <div class="dot" style="--i: 1"></div>
-          <div class="dot" style="--i: 2"></div>
-          <div class="dot" style="--i: 3"></div>
-          <div class="dot" style="--i: 4"></div>
+        <div id="loader-details" class="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
         <div id="footer" class="u-is-hidden">
           <small id="plot" class="u-p"></small>
           <button
             id="button-fav"
-            class="u-button is-outlined is-large"
+            class="u-button border-none large outlined large"
             title="${!fav ? "add to favorites" : "remove from favorites"}"
           >
             <i class="fa fa-heart${!fav ? "-o" : ""} " aria-hidden="true"></i>
@@ -136,7 +135,7 @@ async function useMovies({
   function listenerHideDetail() {
     document.getElementById("button-lightbox").addEventListener("click", () => {
       const $ligthBox = document.getElementById("lightbox");
-      $ligthBox.classList.toggle("u-is-hidden");
+      $ligthBox.classList.remove("lightbox--show");
     });
   }
 
@@ -160,7 +159,7 @@ async function useMovies({
 
     const call = await movies.searchById(`&i=${id}`);
 
-    $loader.classList.toggle("u-is-hidden");
+    $loader.classList.toggle("loader");
     $footer.classList.toggle("u-is-hidden");
     $footer.classList.toggle("footer_detail");
 
@@ -173,7 +172,7 @@ async function useMovies({
   }
 
   function toggleLoader(loader) {
-    loader.classList.toggle("u-is-hidden");
+    loader.classList.toggle("loader");
   }
 }
 

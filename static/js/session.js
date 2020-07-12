@@ -9,38 +9,21 @@ function useSession() {
 }
 
 function login({ username, password }) {
+  const id = "_" + Math.random().toString(36).substr(2, 9);
   /* users in localStorage? */
   if (Boolean(window.localStorage.getItem("users"))) {
     let existUser = false;
     const users = JSON.parse(window.localStorage.getItem("users"));
     /* find user logged in users localStorage */
-    users.map(
-      ({
-        id,
-        username: usernameStorage,
-        password: passwordStorage,
-        favorites,
-        lastSearch
-      }) => {
-        /* if find user is true, init session */
-        if (usernameStorage === username && passwordStorage === password) {
-          existUser = true;
-          window.sessionStorage.setItem(
-            "session",
-            JSON.stringify({
-              id,
-              username,
-              password,
-              favorites,
-              lastSearch
-            })
-          );
-        }
+    users.map(user => {
+      /* if find user is true, init session */
+      if (user.username === username && user.password === password) {
+        existUser = true;
+        window.sessionStorage.setItem("session", JSON.stringify(user));
       }
-    );
+    });
     /* if not find user, add to localStorage and init session */
     if (!existUser) {
-      const id = "_" + Math.random().toString(36).substr(2, 9);
       users.push({
         id,
         username,
@@ -61,7 +44,6 @@ function login({ username, password }) {
       window.localStorage.setItem("users", JSON.stringify(users));
     }
   } else {
-    const id = "_" + Math.random().toString(36).substr(2, 9);
     window.sessionStorage.setItem(
       "session",
       JSON.stringify({
@@ -138,12 +120,7 @@ function toggleFavStorage(id) {
   window.localStorage.setItem("users", JSON.stringify(users));
   window.sessionStorage.setItem(
     "session",
-    JSON.stringify({
-      id: session.id,
-      username: session.username,
-      password: session.password,
-      favorites: newFavorites
-    })
+    JSON.stringify({ ...session, favorites: newFavorites })
   );
 }
 

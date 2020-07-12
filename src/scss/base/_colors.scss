@@ -1,0 +1,21 @@
+:root {
+  --veryDarkBlue: hsl(229, 31%, 21%);
+  --red: #ef5350;
+  --ligthCyan: #e0ffff;
+  --backgroundLigth: #efefef;
+  --backgroundDark: hsl(218, 14%, 31%);
+  --softBackground: #675d5c;
+  --softGreen: #d0cfcf;
+  --secondaryColor: #c79065;
+  --secondaryDarkColor: #836c5d;
+}
+
+$very-dark-blue: var(--veryDarkBlue);
+$red: var(--red);
+$ligth-cyan: var(--ligthCyan);
+$background-ligth: var(--backgroundLigth);
+$background-dark: var(--backgroundDark);
+$soft-background: var(--softBackground);
+$soft-green: var(--softGreen);
+$secondary-color: var(--secondaryColor);
+$secondary-dark-color: var(--secondaryDarkColor);

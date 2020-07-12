@@ -1,50 +1,3 @@
-@import "./scroll-bar.css";
-@import "./variables.css";
-@import "./utilities.css";
-@import "./loader.css";
-@import "./ligthbox.css";
-@import "./masonry.css";
-@import "./input.css";
-@import "./header.css";
-
-body {
-  font-family: "Source Code Pro", monospace;
-  margin: 0;
-  font-size: 14px;
-  background-color: var(--backgroundLigth);
-  color: var(--ligthCyan);
-}
-
-body.dark {
-  background-color: var(--backgroundDark);
-}
-
-hr {
-  border-color: var(--secondaryColor);
-}
-
-a {
-  background: var(--secondaryColor);
-  color: #fff;
-  display: block;
-  font-size: 12px;
-  line-height: 1em;
-  margin: 0;
-  padding: 5px 110px;
-  position: fixed;
-  top: 20px;
-  right: -100px;
-  text-align: center;
-  text-decoration: none;
-  transform: rotate(45deg);
-}
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-}
-
 .tabs {
   display: block;
   display: -webkit-flex;
@@ -58,18 +11,17 @@ select:focus {
 }
 .tabs [class^="tab"] label,
 .tabs [class*=" tab"] label {
-  /* color: #efedef; */
   cursor: pointer;
   display: block;
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1em;
-  padding-bottom: 0.5rem;
+  padding: 0.5em 0 0.7em;
   text-align: center;
 }
 .tabs [class^="tab"] [type="radio"],
 .tabs [class*=" tab"] [type="radio"] {
-  border-bottom: 1px solid var(--ligthCyan);
+  border-bottom: 1px solid $soft-background;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -85,11 +37,11 @@ select:focus {
 .tabs [class^="tab"] [type="radio"]:focus,
 .tabs [class*=" tab"] [type="radio"]:hover,
 .tabs [class*=" tab"] [type="radio"]:focus {
-  border-bottom: 1px solid var(--secondaryColor);
+  border-bottom: 1px solid $secondary-color;
 }
 .tabs [class^="tab"] [type="radio"]:checked,
 .tabs [class*=" tab"] [type="radio"]:checked {
-  border-bottom: 2px solid var(--secondaryColor);
+  border-bottom: 2px solid $secondary-color;
 }
 .tabs [class^="tab"] [type="radio"]:checked + div,
 .tabs [class*=" tab"] [type="radio"]:checked + div {

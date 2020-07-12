@@ -11,7 +11,7 @@
       href="./static/icons/icon.png"
     />
 
-    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="./static/css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -19,7 +19,7 @@
     <title>Movieslog | Login</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header u-is-column center">
       <img
         class="header_logo"
         src="./static/icons/logo_transparent.png"
@@ -28,9 +28,9 @@
       <h5 class="header_slogan">Find your favorite entertainment</h5>
     </header>
     <form id="form-login" class="u-wrapper-sm">
-      <div class="input_control is_column">
+      <div class="text_field is_column">
         <input
-          class="input_control_input"
+          class="text_field_input"
           id="username"
           type="text"
           placeholder="Username"
@@ -40,9 +40,9 @@
           This field is required
         </small>
       </div>
-      <div class="input_control is_column">
+      <div class="text_field is_column">
         <input
-          class="input_control_input"
+          class="text_field_input"
           id="password"
           type="password"
           placeholder="Password"
@@ -51,10 +51,12 @@
           >This field is required
         </small>
       </div>
-      <h5 class="u-is-hidden">
+      <!-- <h5 class="u-is-hidden text_field_error text_field_error_generic">
         Username or password incorrect
-      </h5>
-      <button class="u-button is-fullWidth">Login</button>
+      </h5> -->
+      <button class="u-button fullWidth">
+        Login
+      </button>
     </form>
     <script type="module" src="./static/js/login.js"></script>
     <script type="module" src="./static/js/dark-mode.js"></script>

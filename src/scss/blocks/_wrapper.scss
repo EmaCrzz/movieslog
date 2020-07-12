@@ -1,0 +1,16 @@
+.u-wrapper,
+.u-wrapper-md,
+.u-wrapper-sm {
+  min-width: 320px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1em;
+}
+
+.u-wrapper-md {
+  max-width: 800px;
+}
+
+.u-wrapper-sm {
+  max-width: 600px;
+}

@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+  &_logo {
+    margin-top: 6rem;
+    width: 15rem;
+    &_small {
+      width: 8rem;
+      margin: 0;
+    }
+  }
+  &_slogan {
+    margin: 0;
+    margin-bottom: 1rem;
+    color: $secondary-color;
+  }
+}
+
+.header.center {
+  justify-content: center;
+}
+.header.space-between {
+  justify-content: space-between;
+}

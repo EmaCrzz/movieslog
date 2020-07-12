@@ -1,0 +1,49 @@
+.u-button {
+  background: $secondary-color;
+  color: #fff;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 0.2em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  transition: 0.1s all;
+  &:focus {
+    outline: none;
+  }
+  &:active,
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+.u-button.outlined {
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $ligth-cyan;
+  padding: 1em 1.2em;
+}
+
+.u-button.border-none {
+  border: none;
+}
+.u-button.large {
+  font-size: 2rem;
+}
+
+.u-button.fullWidth {
+  width: 100%;
+}
+
+.u-button.logout {
+  border-radius: 50%;
+  outline: none;
+  height: 35px;
+  width: 35px;
+  color: $ligth-cyan;
+  padding: 0;
+}

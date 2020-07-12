@@ -1,0 +1,56 @@
+.text_field {
+  display: flex;
+  margin-top: 1rem;
+  &_input {
+    background: $soft-green;
+    color: $very-dark-blue;
+    border: none;
+    border-bottom: 2px solid $secondary-dark-color;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.2em;
+    padding: 1em 0.5em;
+    font-size: 1em;
+    flex-grow: 1;
+    border-radius: 0.2em;
+    transition: 0.3s all;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: $soft-background;
+      opacity: 0.5;
+    }
+    &_error {
+      border-bottom: 2px solid var(--red);
+    }
+  }
+  &_error {
+    visibility: visible;
+    color: var(--red);
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 0.5em;
+    margin-bottom: 0.7em;
+    &_generic {
+      text-align: center;
+      font-size: 0.98em;
+    }
+  }
+}
+
+.text_field.with_margin {
+  .text_field_input {
+    margin-right: 1.2em;
+  }
+}
+
+body.dark .text_field_input {
+  background-color: $soft-background;
+  color: $ligth-cyan;
+}
+
+body.dark .text_field_input::placeholder {
+  color: var(--ligthCyan);
+}
