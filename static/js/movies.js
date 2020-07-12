@@ -34,6 +34,8 @@ async function useMovies({
       return;
     }
   } else {
+    const $lastSearch = document.getElementById("last-search");
+    if ($lastSearch) $lastSearch.remove();
     toggleLoader(htmlLoader);
     if (htmlContainer.hasChildNodes()) {
       htmlContainer.innerHTML = "";
@@ -45,8 +47,6 @@ async function useMovies({
       toggleLoader(htmlLoader);
       return;
     }
-    const $lastSearch = document.getElementById("last-search");
-    if ($lastSearch) $lastSearch.remove();
     listMovies = call.data.Search;
     setLastSearch(keyword);
   }
