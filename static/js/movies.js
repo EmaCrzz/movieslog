@@ -94,7 +94,7 @@ async function useMovies({
     return `<div class="u-wrapper-md">
       <button
         id="button-lightbox"
-        class="u-button outlined border-none button_lightbox"
+        class="button_lightbox u-button outlined border-none"
       >
         <img src="./static/icons/cerrar.svg" alt="" />
       </button>
@@ -122,7 +122,7 @@ async function useMovies({
           <small id="plot" class="u-p"></small>
           <button
             id="button-fav"
-            class="u-button border-none large outlined large"
+            class="u-button border-none large outlined"
             title="${!fav ? "add to favorites" : "remove from favorites"}"
           >
             <i class="fa fa-heart${!fav ? "-o" : ""} " aria-hidden="true"></i>

@@ -1,0 +1,37 @@
+.container_menu {
+  display: flex;
+  flex-direction: column;
+}
+.container_menu .header_logo {
+  margin: 3rem auto;
+  width: 17rem;
+}
+.main-menu {
+  @include reset-list;
+  border-top: 1px solid $secondary-color;
+
+  &__item {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2.5;
+    border-bottom: 1px solid $secondary-color;
+
+    @include laptop {
+      line-height: 3;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $secondary-color;
+    font-size: 1.2rem;
+
+    &--active {
+      color: $soft-background;
+    }
+  }
+  li:nth-child(3) {
+    margin-top: 12rem;
+    border: none;
+  }
+}
