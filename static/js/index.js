@@ -9,6 +9,7 @@ const $inputSearch = document.getElementById("input-search");
 const $errorSearch = document.getElementById("error-search");
 const $menuButton = document.getElementById("menu-button");
 const $lightboxMenu = document.getElementById("lightbox-menu");
+const $logoutButton = document.getElementById("logout");
 const $closeMenu = document.getElementById("button-lightbox-menu");
 
 useSession();
@@ -40,12 +41,13 @@ function validateForm(event) {
 }
 
 $menuButton.addEventListener("click", () => {
-  // logout();
-  // const htmlContent = showDetail(movieSelected);
-  // $ligthBox.insertAdjacentHTML("beforeend", htmlContent);
   $lightboxMenu.classList.add("lightbox--show");
 });
 $closeMenu &&
   $closeMenu.addEventListener("click", () => {
     $lightboxMenu.classList.remove("lightbox--show");
+  });
+$logoutButton &&
+  $logoutButton.addEventListener("click", () => {
+    logout();
   });
