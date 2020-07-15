@@ -16,16 +16,14 @@ async function useMovies({
 }) {
   let listMovies = [];
   const lastKeyword = getLastSearch();
-  const $lastSearchHTML = document.getElementById("last-search");
-  const $pInfoHTML = document.getElementById("p-info");
 
   if (!lastKeyword && !keyword && !favoritesPage) {
     const htmlLastSearch = `<p id="p-info" class="u-wrapper">Search a movies</p>`;
     htmlContainer.insertAdjacentHTML("beforebegin", htmlLastSearch);
-    toggleLoader(htmlLoader);
   }
 
   if (lastKeyword && !keyword && !favoritesPage) {
+    toggleLoader(htmlLoader);
     const htmlLastSearch = `<p id="p-info" class="u-wrapper">Last search: ${lastKeyword}</p>`;
     htmlContainer.insertAdjacentHTML("beforebegin", htmlLastSearch);
     const call = await movies.searchByTitle(`s=${lastKeyword}`);
@@ -35,14 +33,20 @@ async function useMovies({
   }
 
   if (favoritesPage) {
+    listMovies = getFavorites();
+    toggleLoader(htmlLoader);
+    if (listMovies.length === 0) {
+      createHtmlEmptyFavPage();
+      return;
+    }
     const htmlFavorites = `<p id="p-info" class="u-wrapper">Your Favorites</p>`;
     htmlContainer.insertAdjacentHTML("beforebegin", htmlFavorites);
-    listMovies = getFavorites();
     showMovies();
-    toggleLoader(htmlLoader);
   }
 
   if (keyword) {
+    const $pInfoHTML = document.getElementById("p-info");
+    toggleLoader(htmlLoader);
     if ($pInfoHTML) $pInfoHTML.remove();
     if (htmlContainer.hasChildNodes()) {
       htmlContainer.innerHTML = "";
@@ -57,6 +61,7 @@ async function useMovies({
     listMovies = call.data.Search;
     setLastSearch(keyword);
     showMovies();
+    toggleLoader(htmlLoader);
   }
 
   function showMovies() {
@@ -102,7 +107,7 @@ async function useMovies({
     const fav = checkFavStorage(imdbID);
     const img =
       Poster !== "N/A"
-        ? `<img class="lightbox_poster" src="${Poster}" alt="" />`
+        ? `<img class="card_movie_poster" src="${Poster}" alt="" />`
         : "";
     return `<div class="u-wrapper-md">
       <button
@@ -112,17 +117,16 @@ async function useMovies({
         <img src="./static/icons/cerrar.svg" alt="" />
       </button>
       <div class="container_lightbox">
-        <div class="lightbox_details">
+        <h2 class="u-h4 card_movie_title">${Title}</h2>
+        <hr />
+        <div class="card_movie_header">
           ${img}
-          <div class="lightbox_info">
-            <h2 class="u-h4">${Title}</h2>
-            <hr />
+          <div>
             <h4 class="u-h6">${Type} - ${Year}</h4>
             <h4 class="u-h6" id="country"></h4>
             <h4 class="u-h6" id="genre"></h4>
             <h4 class="u-h6" id="language"></h4>
             <h4 class="u-h6" id="production"></h4>
-            <p class="u-h6" id="actors"></p>
           </div>
         </div>
         <div id="loader-details" class="loader">
@@ -132,6 +136,7 @@ async function useMovies({
           <div></div>
         </div>
         <div id="footer" class="u-is-hidden">
+          <p class="u-h6" id="actors"></p>
           <small id="plot" class="u-p"></small>
           <button
             id="button-fav"
@@ -162,6 +167,7 @@ async function useMovies({
         document.getElementById(id).remove();
         const $ligthBox = document.getElementById("lightbox");
         $ligthBox.classList.remove("lightbox--show");
+        checkEmptyFavPage();
       }
     });
   }
@@ -188,6 +194,21 @@ async function useMovies({
     $production.textContent = `Production: ${call.data.Production}`;
     $actors.textContent = `Actors: ${call.data.Actors}`;
     $plot.textContent = call.data.Plot !== "N/A" ? call.data.Plot : "";
+  }
+
+  function createHtmlEmptyFavPage() {
+    const htmlFavoritesEmpty = `<div id="p-info" class="movies_favorites_empty">
+        <span>You have no favorites. <a href="index.html">Add&nbsp;your&nbsp;search</a></span>
+      </div>`;
+    htmlContainer.insertAdjacentHTML("beforebegin", htmlFavoritesEmpty);
+  }
+
+  function checkEmptyFavPage() {
+    if (!htmlContainer.hasChildNodes()) {
+      const $pInfoHTML = document.getElementById("p-info");
+      if ($pInfoHTML) $pInfoHTML.remove();
+      createHtmlEmptyFavPage();
+    }
   }
 
   function toggleLoader(loader) {

@@ -3,11 +3,14 @@
   column-gap: 10px;
   column-fill: initial;
   margin-top: 1rem;
-  @media screen and (min-width: 320px) and (max-width: 600px) {
+  @media screen and (min-width: 320px) and (max-width: 500px) {
     column-count: 2;
   }
-  @media screen and (min-width: 600px) and (max-width: 1023px) {
+  @media screen and (min-width: 500px) and (max-width: 720px) {
     column-count: 3;
+  }
+  @media screen and (min-width: 720px) and (max-width: 1023px) {
+    column-count: 4;
   }
   @include laptop {
     column-count: 5;

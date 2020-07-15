@@ -1,0 +1,61 @@
+.u-wrapper,
+.u-wrapper-md,
+.u-wrapper-sm {
+  min-width: 320px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1em;
+}
+
+.u-wrapper-md {
+  max-width: 800px;
+}
+
+.u-wrapper-sm {
+  max-width: 600px;
+}
+
+.u-is-hidden {
+  display: none;
+}
+
+.u-is-column {
+  flex-direction: column;
+}
+
+.u-mt {
+  margin-top: 2rem;
+}
+
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+  font-size: 2em;
+  font-weight: 500;
+}
+.u-h2 {
+  font-size: 1.7em;
+}
+.u-h3 {
+  font-size: 1.4em;
+  margin-top: 0.5em;
+}
+.u-h4 {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+.u-h5 {
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+.u-h6 {
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+.u-p {
+  line-height: 1.8;
+  font-size: 0.9em;
+}

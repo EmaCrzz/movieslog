@@ -1,0 +1,30 @@
+.card_movie_poster {
+  height: 250px;
+  margin-right: 0.5rem;
+}
+
+.card_movie_header {
+  display: flex;
+}
+
+.footer_detail {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.movies_favorites_empty {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  a {
+    color: $secondary-color;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .card_movie_title {
+    max-width: 270px;
+  }
+}

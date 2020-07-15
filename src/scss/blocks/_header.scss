@@ -16,6 +16,18 @@
   }
 }
 
+.form_sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: $background-ligth;
+  padding: 0.2rem 0;
+}
+
+body.dark .form_sticky {
+  background-color: $background-dark;
+}
+
 .header.center {
   justify-content: center;
 }

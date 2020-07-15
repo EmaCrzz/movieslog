@@ -26,6 +26,9 @@
   box-shadow: none;
   border: 1px solid $ligth-cyan;
   padding: 1em 1.2em;
+  &:active {
+    transform: scale(0.8);
+  }
 }
 
 .u-button.border-none {
