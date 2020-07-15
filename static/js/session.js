@@ -83,6 +83,11 @@ function getSession() {
   return JSON.parse(window.sessionStorage.getItem("session"));
 }
 
+function getFavorites() {
+  const session = JSON.parse(window.sessionStorage.getItem("session"));
+  return session.favorites;
+}
+
 function getLastSearch() {
   const session = JSON.parse(window.sessionStorage.getItem("session"));
   return session.lastSearch;
@@ -96,19 +101,19 @@ function setLastSearch(keyword) {
 
 function checkFavStorage(id) {
   const session = getSession();
-  return session.favorites.some(favorite => favorite === id);
+  return session.favorites.some(favorite => favorite.imdbID === id);
 }
 
-function toggleFavStorage(id) {
+function toggleFavStorage(movie) {
   /* This function is ready for production? I do not know 🤔 */
   const session = getSession();
   let users = getUsers();
   let newFavorites = [];
-  if (checkFavStorage(id)) {
-    newFavorites = session.favorites.filter(fav => fav !== id);
+  if (checkFavStorage(movie.imdbID)) {
+    newFavorites = session.favorites.filter(fav => fav.imdbID !== movie.imdbID);
   } else {
     newFavorites = session.favorites;
-    newFavorites.push(id);
+    newFavorites.push(movie);
   }
   users = users.filter(user => user.id !== session.id);
   users.push({
@@ -131,5 +136,6 @@ export {
   checkFavStorage,
   toggleFavStorage,
   setLastSearch,
-  getLastSearch
+  getLastSearch,
+  getFavorites
 };

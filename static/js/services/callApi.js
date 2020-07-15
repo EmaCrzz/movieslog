@@ -9,12 +9,6 @@ async function callApi(param) {
   const url = BASE_URL + param;
 
   const response = await fetch(url, options);
-
-  if (!response.ok) {
-    const error = new ErrorsApi(response.status, data);
-    throw error;
-  }
-
   const data = await response.json();
 
   return { response: response, data: data };

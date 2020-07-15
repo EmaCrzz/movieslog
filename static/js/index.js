@@ -2,6 +2,8 @@ import { movies } from "./services/search.js";
 import { useSession, logout } from "./session.js";
 import { useMovies } from "./movies.js";
 
+const favoritesPage = window.location.href.includes("favorites.html");
+
 const $containerMovies = document.getElementById("container-movies");
 const $loader = document.getElementById("loader");
 const $formSearch = document.getElementById("form-search");
@@ -16,10 +18,11 @@ useSession();
 useMovies({
   htmlContainer: $containerMovies,
   htmlError: $errorSearch,
-  htmlLoader: $loader
+  htmlLoader: $loader,
+  favoritesPage
 });
 
-$formSearch.addEventListener("submit", validateForm, false);
+$formSearch && $formSearch.addEventListener("submit", validateForm, false);
 
 function validateForm(event) {
   $errorSearch.classList.add("u-is-hidden");
