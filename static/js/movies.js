@@ -43,7 +43,6 @@ async function useMovies({
   }
 
   if (keyword) {
-    toggleLoader(htmlLoader);
     if ($pInfoHTML) $pInfoHTML.remove();
     if (htmlContainer.hasChildNodes()) {
       htmlContainer.innerHTML = "";
