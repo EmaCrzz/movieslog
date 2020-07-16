@@ -692,7 +692,7 @@ body.dark .text_field_input::placeholder {
 
 .movies_favorites_empty {
   display: flex;
-  height: 80vh;
+  height: 77vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
