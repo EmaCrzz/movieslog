@@ -361,6 +361,12 @@ body.dark {
 hr {
   border-color: var(--secondaryColor); }
 
+.form_login {
+  height: 63vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
 .loader {
   position: relative;
   width: 10px;
@@ -515,7 +521,7 @@ hr {
   display: flex;
   align-items: center; }
   .header_logo {
-    margin-top: 6rem;
+    margin-top: 5rem;
     width: 15rem; }
     .header_logo_small {
       width: 8rem;

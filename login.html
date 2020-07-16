@@ -12,6 +12,8 @@
     />
 
     <link rel="stylesheet" href="./static/css/styles.css" />
+    <link rel="stylesheet" href="./static/css/footer.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -27,7 +29,7 @@
       />
       <h5 class="header_slogan">Find your favorite entertainment</h5>
     </header>
-    <form id="form-login" class="u-wrapper-sm clase-de-prueba">
+    <form id="form-login" class="u-wrapper-sm form_login">
       <div class="text_field is_column">
         <input
           class="text_field_input"
@@ -55,7 +57,66 @@
         Login
       </button>
     </form>
+    <footer id="contact" class="footer">
+      <div class="u-wrapper">
+        <hr />
+        <div class="footer-content">
+          <div class="footer-primary">
+            <h4 class="u-h4">Get in touch.</h4>
+            <p class="u-p">
+              Send a general message or details of a project you'd like me to be
+              a part of and I'll get back to you as soon as possible.
+            </p>
+            <a
+              href="https://emavillanueva-d1238.web.app/"
+              target="_blank"
+              class="footer-logo"
+            ></a>
+          </div>
+          <div class="footer-social">
+            <div class="footer-tooltip">
+              <span class="tooltiptext" id="myTooltip">Copy email</span>
+              <div class="u-p email" id="email">
+                <img
+                  src="./static/icons/icon-send-email.png"
+                  alt="send email"
+                />
+                <pre
+                  id="textoACopiar"
+                ><code>ema_villanueva@hotmail.com</code></pre>
+              </div>
+            </div>
+            <div>
+              <a
+                href="https://github.com/EmaCrzz/"
+                target="_blank"
+                class="github"
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/emanuel-villanueva-713035173/"
+                target="_blank"
+                class="linkedin"
+              ></a>
+              <a
+                href="https://www.instagram.com/ema.villanueva_crzz/"
+                target="_blank"
+                class="instagram"
+              ></a>
+              <a
+                href="https://twitter.com/Ema15crzz"
+                target="_blank"
+                class="twitter"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="./static/js/login.js"></script>
     <script type="module" src="./static/js/dark-mode.js"></script>
+    <script
+      src="./static/js/copy-email.js"
+      type="application/javascript"
+    ></script>
   </body>
 </html>

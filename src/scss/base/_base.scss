@@ -14,3 +14,10 @@ body.dark {
 hr {
   border-color: $secondary-color;
 }
+
+.form_login {
+  height: 63vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
