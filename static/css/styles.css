@@ -567,6 +567,7 @@ body.dark .form_sticky {
     transform: scale(0.98); }
 
 .u-button.outlined {
+  color: var(--secondaryColor);
   background: transparent;
   box-shadow: none;
   border: 1px solid var(--ligthCyan);
