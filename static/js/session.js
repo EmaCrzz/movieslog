@@ -95,7 +95,7 @@ function getLastSearch() {
 
 function setLastSearch(keyword) {
   const session = JSON.parse(window.sessionStorage.getItem("session"));
-  session.lastSearch = keyword;
+  session.lastSearch = keyword.replace("+", " ");
   window.sessionStorage.setItem("session", JSON.stringify(session));
 }
 
