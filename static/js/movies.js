@@ -18,13 +18,13 @@ async function useMovies({
   const lastKeyword = getLastSearch();
 
   if (!lastKeyword && !keyword && !favoritesPage) {
-    const htmlLastSearch = `<p id="p-info" class="u-wrapper">Search a movies</p>`;
+    const htmlLastSearch = `<p id="p-info" class="u-wrapper-md">Search a movies</p>`;
     htmlContainer.insertAdjacentHTML("beforebegin", htmlLastSearch);
   }
 
   if (lastKeyword && !keyword && !favoritesPage) {
     toggleLoader(htmlLoader);
-    const htmlLastSearch = `<p id="p-info" class="u-wrapper">Last search: ${lastKeyword}</p>`;
+    const htmlLastSearch = `<p id="p-info" class="u-wrapper-md">Last search: ${lastKeyword}</p>`;
     htmlContainer.insertAdjacentHTML("beforebegin", htmlLastSearch);
     const call = await movies.searchByTitle(`s=${lastKeyword}`);
     listMovies = call.data.Search;
@@ -39,7 +39,7 @@ async function useMovies({
       createHtmlEmptyFavPage();
       return;
     }
-    const htmlFavorites = `<p id="p-info" class="u-wrapper">Your Favorites</p>`;
+    const htmlFavorites = `<p id="p-info" class="u-wrapper-md">Your Favorites</p>`;
     htmlContainer.insertAdjacentHTML("beforebegin", htmlFavorites);
     showMovies();
   }
