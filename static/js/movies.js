@@ -7,6 +7,7 @@ import {
   getFavorites
 } from "./session.js";
 const posterSvg = "static/images/photo.svg";
+
 async function useMovies({
   htmlContainer = null,
   htmlLoader = null,
@@ -18,8 +19,13 @@ async function useMovies({
   const lastKeyword = getLastSearch();
 
   if (!lastKeyword && !keyword && !favoritesPage) {
-    const htmlLastSearch = `<p id="p-info" class="u-wrapper-md">Search a movies</p>`;
-    htmlContainer.insertAdjacentHTML("beforebegin", htmlLastSearch);
+    // const htmlLastSearch = `<p id="p-info" class="u-wrapper-md">Search a movies</p>`;
+    // htmlContainer.insertAdjacentHTML("beforebegin", htmlLastSearch);
+    const htmlFavoritesEmpty = `<div id="p-info" class="movies_favorites_empty">
+        <img src="static/images/wait_search.svg" alt="wait search">
+        <p>Waiting to search!</p>
+      </div>`;
+    htmlContainer.insertAdjacentHTML("beforebegin", htmlFavoritesEmpty);
   }
 
   if (lastKeyword && !keyword && !favoritesPage) {

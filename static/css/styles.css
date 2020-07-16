@@ -694,9 +694,13 @@ body.dark .text_field_input::placeholder {
   display: flex;
   height: 80vh;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column;
+  color: var(--secondaryColor); }
   .movies_favorites_empty a {
     color: var(--secondaryColor); }
+  .movies_favorites_empty img {
+    height: 150px; }
 
 @media screen and (max-width: 460px) {
   .card_movie_title {

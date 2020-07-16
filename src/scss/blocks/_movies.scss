@@ -18,8 +18,13 @@
   height: 80vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  color: $secondary-color;
   a {
     color: $secondary-color;
+  }
+  img {
+    height: 150px;
   }
 }
 
