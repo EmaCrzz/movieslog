@@ -6,7 +6,8 @@ Watch the live project https://emacrzz.github.io/movieslog/
 
 OMDb API: http://www.omdbapi.com/
 
-Captures
+# Captures
+
 ![Emanuel Villanueva](https://repository-images.githubusercontent.com/277400923/67201c00-bf83-11ea-984f-d4a53424ed8d)
 ![Emanuel Villanueva](https://repository-images.githubusercontent.com/277400923/7449c180-c760-11ea-98f5-883a5d797e3c)
 ![Emanuel Villanueva](https://repository-images.githubusercontent.com/277400923/08b42400-c761-11ea-96d9-0f108dbd67de)
