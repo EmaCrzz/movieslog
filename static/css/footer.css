@@ -1,11 +1,12 @@
 .footer {
   background: var(--primaryColor);
+  color: #c79065;
 }
 .footer .u-h4 {
-  color: #fff;
+  color: #c79065;
 }
 .footer a {
-  color: #fff;
+  color: #c79065;
   text-decoration: none;
 }
 .footer-logo {
@@ -31,7 +32,7 @@
 .footer-social .email {
   display: flex;
   text-decoration: underline;
-  text-decoration-color: #fff;
+  text-decoration-color: #c79065;
   cursor: pointer;
   justify-content: center;
   align-items: center;
